@@ -1,3 +1,3 @@
 # MG6
 1. If I write a for loop inside a Update method the for loop will complete before the Update method finishes. This is because, the for loop does not execute over multiple frames so it completely ignores it and finishes first. As a result if I write a for loop that takes a really long time to finish it will make the game lag.
-2. 
+2. One issue that I ran into while testing the game was the player phasing through the underside of the platforms and coming to the top of the platform. The player can also phase through the outer walls of the game and stepping into the black void which causes them to fall out of the game because there was nothing else they could do. Something in the code that allowed this was Cat.cs. Cat.cs completely disabled the player's collider (_collider.enabled = false) and turns it back on soon as the velocity drops to 0.0f or below (_rigidbody.linearVelocity.y > 0.0f). 
